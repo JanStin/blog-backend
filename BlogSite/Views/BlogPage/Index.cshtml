@@ -1,0 +1,20 @@
+﻿@model BlogPageViewModel
+
+@{ 
+    ViewBag.Title = "Блог";
+}
+
+<div class="section__content">
+    @foreach (Post post in Model.Posts)
+    {
+        <div class="card">
+            <a href="#"><img class="card__image" src="img/card-img.jpg"></a>
+            <p class="card__tag"><a href="#">@post.Category.Name</a></p>
+            <div class="card__content">
+                <h3 class="card__title"><a href="#">@post.Title</a></h3>
+                <p class="card__description">@post.ShortDescription</p>
+                <div class="card__button"> <a class="card__abutton" href="#">Читать </a></div>
+            </div>
+        </div>
+    }
+</div>

@@ -32,3 +32,4 @@ C:\Users\it003\Desktop\MyFuckingProjects\BlogSite\BlogSite\obj\Debug\netcoreapp3
 C:\Users\it003\Desktop\MyFuckingProjects\BlogSite\BlogSite\obj\Debug\netcoreapp3.1\BlogSite.pdb
 C:\Users\it003\Desktop\MyFuckingProjects\BlogSite\BlogSite\obj\Debug\netcoreapp3.1\BlogSite.genruntimeconfig.cache
 C:\Users\it003\Desktop\MyFuckingProjects\BlogSite\BlogSite\obj\Debug\netcoreapp3.1\BlogSite.csproj.CopyComplete
+C:\Users\it003\Desktop\MyFuckingProjects\BlogSite\BlogSite\obj\Debug\netcoreapp3.1\Razor\Views\BlogPage\Index.cshtml.g.cs
