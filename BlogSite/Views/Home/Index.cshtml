@@ -1,0 +1,10 @@
+﻿@model HomeViewModel
+
+<div>
+    @{ 
+        foreach(Post post in Model.Posts)
+        {
+            <h2>@post.Title</h2>
+        }
+    }
+</div>
