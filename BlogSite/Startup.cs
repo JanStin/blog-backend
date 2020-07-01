@@ -46,6 +46,8 @@ namespace BlogSite
                     name:"blog",
                     pattern:"{controller=BlogPage}/{action=Index}/{id?}"
                 );
+
+                endpoints.MapControllerRoute("about", "{controller=About}/{action=Index}");
             });
         }
     }
