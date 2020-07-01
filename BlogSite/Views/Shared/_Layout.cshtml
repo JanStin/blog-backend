@@ -4,6 +4,7 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
+
     <link href="css/style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,11 +21,6 @@
     <div>
         @RenderBody()
     </div>
-    <footer class="footer">
-        <a href="#"><img class="logo" src="img/logo.png"></a>
-        <div class="footer__content">
-            <div class="footer__copy">© 2020 Кирилин Михаил</div><a href="https://github.com/JanStin"><img src="img/github.svg"></a>
-        </div>
-    </footer>
+    @await Html.PartialAsync("FooterPartial")
 </body>
 </html>
