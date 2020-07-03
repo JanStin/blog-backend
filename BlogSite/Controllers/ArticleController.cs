@@ -10,10 +10,11 @@ namespace BlogSite.Controllers
 {
     public class ArticleController : Controller
     {
-        readonly private ArticleModel article = new ArticleModel();
+        private ArticleModel article;
         public IActionResult Index(int id)
         {
-            return View();
+            article = new ArticleModel(id);
+            return View(article);
         }
     }
 }

@@ -1,0 +1,9 @@
+﻿@model BlogSite.Models.ArticleModel 
+
+@{ 
+    ViewBag.Title = Model.Article.Title;
+    ViewBag.Description = Model.Article.MetaDescription;
+    ViewBag.KeyWords = Model.Article.MetaKeywords;
+}
+
+@Html.Raw(Model.Article.Article)

@@ -49,7 +49,7 @@ namespace BlogSite
 
                 endpoints.MapControllerRoute("about", "{controller=About}/{action=Index}");
 
-                endpoints.MapControllerRoute("article", "{controller=Artile}/{action=Index}/{id}");
+                endpoints.MapControllerRoute("article", "{controller=Article}/{action=Index}/{id}");
             });
         }
     }
