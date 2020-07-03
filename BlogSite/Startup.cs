@@ -43,13 +43,13 @@ namespace BlogSite
                 );
 
                 endpoints.MapControllerRoute(
-                    name:"blog",
-                    pattern:"{controller=BlogPage}/{action=Index}/{id?}"
+                    name: "blog",
+                    pattern: "{controller=BlogPage}/{action=Index}/{id?}"
                 );
 
                 endpoints.MapControllerRoute("about", "{controller=About}/{action=Index}");
 
-                endpoints.MapControllerRoute("article", "{controller=Artile}/{action=Index}");
+                endpoints.MapControllerRoute("article", "{controller=Artile}/{action=Index}/{id}");
             });
         }
     }

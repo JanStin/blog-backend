@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using BlogSite.Models;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,10 @@ namespace BlogSite.Controllers
 {
     public class ArticleController : Controller
     {
-        
+        readonly private ArticleModel article = new ArticleModel();
+        public IActionResult Index(int id)
+        {
+            return View();
+        }
     }
 }
