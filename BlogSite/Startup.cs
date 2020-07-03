@@ -48,6 +48,8 @@ namespace BlogSite
                 );
 
                 endpoints.MapControllerRoute("about", "{controller=About}/{action=Index}");
+
+                endpoints.MapControllerRoute("article", "{controller=Artile}/{action=Index}");
             });
         }
     }
