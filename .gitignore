@@ -1,5 +1,6 @@
 # Игнорирование сборки. 
 BlogSite/bin/*
+.vs/*
 
 # Ниже описание .gitignore для файлов vs, если бы реп был бы на уровень выше.
 ## Ignore Visual Studio temporary files, build results, and
