@@ -12,12 +12,21 @@ namespace BlogSite.Controllers
     {
         private ArticleModel article;
 
-        [HttpGet("{id}")]
+        
         [Route("article/{id}")]
         public IActionResult Index(int id)
         {
-            article = new ArticleModel(id);
-            return View(article);
+            if (id > 0)
+            {
+                article = new ArticleModel(id);
+                return View("Index", article);
+            }
+            else
+            {
+                // TODO: Поменять на страницу ошибки.
+                article = new ArticleModel(102);
+                return View("Index", article);
+            }
         }
     }
 }
