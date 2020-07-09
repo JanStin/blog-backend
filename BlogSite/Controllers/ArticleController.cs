@@ -12,6 +12,7 @@ namespace BlogSite.Controllers
     {
         private ArticleModel article;
 
+        [HttpGet("{id}")]
         [Route("article/{id}")]
         public IActionResult Index(int id)
         {
