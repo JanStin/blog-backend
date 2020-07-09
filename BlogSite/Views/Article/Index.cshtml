@@ -1,9 +1,12 @@
 ﻿@model BlogSite.Models.ArticleModel 
 
 @{ 
-    ViewBag.Title = Model.Article.Title;
+    ViewBag.Title = Model.Article.MetaTitle;
     ViewBag.Description = Model.Article.MetaDescription;
     ViewBag.KeyWords = Model.Article.MetaKeywords;
 }
 
-@Html.Raw(Model.Article.Article)
+    <div class="article">
+        <h1 class="maintitle">@Model.Article.Title</h1>
+        @Html.Raw(Model.Article.Article)
+    </div>

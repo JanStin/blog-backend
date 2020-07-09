@@ -11,6 +11,8 @@ namespace BlogSite.Controllers
     public class ArticleController : Controller
     {
         private ArticleModel article;
+
+        [Route("article/{id}")]
         public IActionResult Index(int id)
         {
             article = new ArticleModel(id);
