@@ -13,20 +13,11 @@ namespace BlogSite.Controllers
         private ArticleModel article;
 
         
-        [Route("article/{id}")]
+        [Route("article/{id:int}")]
         public IActionResult Index(int id)
-        {
-            if (id > 0)
-            {
-                article = new ArticleModel(id);
-                return View("Index", article);
-            }
-            else
-            {
-                // TODO: Поменять на страницу ошибки.
-                article = new ArticleModel(102);
-                return View("Index", article);
-            }
+        {            
+            article = new ArticleModel(id);
+            return View("Index", article);            
         }
     }
 }
