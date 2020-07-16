@@ -10,14 +10,18 @@ namespace BlogSite.Controllers
 {
     public class ArticleController : Controller
     {
-        private ArticleModel article;
+        private ArticleModel article = new ArticleModel();
 
         
         [Route("article/{id:int}")]
         public IActionResult Index(int id)
-        {            
-            article = new ArticleModel(id);
-            return View("Index", article);            
+        {
+            if (article.Init(id) == null)
+            {
+                return View("~/Views/Error/NotFound.cshtml");
+            }           
+
+            return View("Index", article);
         }
     }
 }

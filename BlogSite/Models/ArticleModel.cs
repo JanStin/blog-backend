@@ -12,14 +12,17 @@ namespace BlogSite.Models
     {
         
         public ArticleEntity Article { get; set; }
-        // TODO: Сделать запрос в БД, чтобы получить статью по id.
-        public ArticleModel(int id)
-        {
-           Article  = new ArticleEntity(id, "Название " + id.ToString(), "Большое описание на несколько строк", @"C:\Users\Rico\Desktop\Уч. материалы\RedFoxDev\img\_TwB97Q_OSo.jpg", "Lorem.Paragraphs(120, 2, 2).ToString()", "Key, Word, То что надо");
-        }
         
-        public ArticleEntity Init(object id)
+        
+        public ArticleEntity Init(int id)
         {
+            // TODO: Сделать запрос в БД, чтобы получить статью по id.
+            if (id < 0 || id > 100)
+            {
+                return null;
+            }
+
+            Article = new ArticleEntity(id, "Название " + id.ToString(), "Большое описание на несколько строк", @"C:\Users\Rico\Desktop\Уч. материалы\RedFoxDev\img\_TwB97Q_OSo.jpg", "Lorem.Paragraphs(120, 2, 2).ToString()", "Key, Word, То что надо");
 
             return Article;
         }
