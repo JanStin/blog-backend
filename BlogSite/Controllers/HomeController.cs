@@ -14,8 +14,12 @@ namespace BlogSite.Controllers
 
         public ViewResult Index()
         {
+            return View();
+        }
 
-
+        [Route("about")]
+        public ViewResult About()
+        {
             return View();
         }
     }

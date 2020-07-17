@@ -37,17 +37,10 @@ namespace BlogSite
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}"
-                );
+                endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapControllerRoute("about", "{controller=Home}/{action=About}");
 
-                endpoints.MapControllerRoute(
-                    name: "blog",
-                    pattern: "{controller=BlogPage}/{action=Index}/{id?}"
-                );
-
-                endpoints.MapControllerRoute("about", "{controller=About}/{action=Index}");
+                endpoints.MapControllerRoute("blog", "{controller=BlogPage}/{action=Index}/{id?}");               
 
                 endpoints.MapControllerRoute("article", "{controller=Article}/{action=Index}/{id}");
             });
