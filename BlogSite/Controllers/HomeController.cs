@@ -12,21 +12,11 @@ namespace BlogSite.Controllers
     public class HomeController : Controller
     {
 
-        private readonly IAllPosts _posts;
-
-        public HomeController(IAllPosts posts)
-        {
-            _posts = posts;
-        }
-
         public ViewResult Index()
         {
-            var homePosts = new HomeViewModel
-            {
-                Posts = _posts.Posts
-            };
 
-            return View(homePosts);
+
+            return View();
         }
     }
 }
