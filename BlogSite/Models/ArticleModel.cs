@@ -22,7 +22,7 @@ namespace BlogSite.Models
                 return null;
             }
 
-            Article = new ArticleEntity(id, "Название " + id.ToString(), "Большое описание на несколько строк", @"C:\Users\Rico\Desktop\Уч. материалы\RedFoxDev\img\_TwB97Q_OSo.jpg", "Lorem.Paragraphs(120, 2, 2).ToString()", "Key, Word, То что надо");
+            Article = new ArticleEntity(id, "Название " + id.ToString(), "Большое описание на несколько строк", @"C:\Users\Rico\Desktop\Уч. материалы\RedFoxDev\img\_TwB97Q_OSo.jpg", "Lorem.Paragraphs(120, 2, 2).ToString()", "Key, Word, То что надо", "Тест");
 
             return Article;
         }

@@ -8,8 +8,9 @@ namespace BlogSite.Domain.Entities
 {
     public class ArticleEntity : BaseEntity
     {
-        // TODO: добавить тег в сущность.
-        public ArticleEntity(int id, string title, string description, string imagePath, string article, string metaKeywords)
+        public string Tag { get; set; }
+        
+        public ArticleEntity(int id, string title, string description, string imagePath, string article, string metaKeywords, string tag)
         {
             Id = id;
             Title = title;
@@ -20,6 +21,7 @@ namespace BlogSite.Domain.Entities
             MetaDescription = description;
             MetaKeywords = metaKeywords;
             DateAdded = DateTime.UtcNow;
+            Tag = tag;
         }
     }
 }
