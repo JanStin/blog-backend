@@ -16,12 +16,14 @@ namespace BlogSite.Controllers
         [Route("article/{id:int}")]
         public IActionResult Index(int id)
         {
-            if (article.Init(id) == null)
+            var model = article.Init(id);
+
+            if (model == null)
             {
                 return View("~/Views/Error/NotFound.cshtml");
             }           
 
-            return View("Index", article);
+            return View("Index", model);
         }
     }
 }
