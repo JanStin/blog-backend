@@ -10,18 +10,18 @@ namespace BlogSite.Domain.Entities
     {
         public string Tag { get; set; }
         
-        public ArticleEntity(int id, string title, string description, string imagePath, string article, string metaKeywords, string tag)
+        public ArticleEntity(int id, string title, string description, string imagePath, string tag, string article, string metaKeywords)
         {
             Id = id;
             Title = title;
             Description = description;
             ImagePath = imagePath;
+            Tag = tag;
             Article = article;
             MetaTitle = title;
             MetaDescription = description;
             MetaKeywords = metaKeywords;
-            DateAdded = DateTime.UtcNow;
-            Tag = tag;
+            DateAdded = DateTime.UtcNow;            
         }
     }
 }
