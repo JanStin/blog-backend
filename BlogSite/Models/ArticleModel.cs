@@ -17,22 +17,17 @@ namespace BlogSite.Models
         public ArticleEntity Init(int id)
         {
             var connect = new Domain.MySqlConnect();
-            var connection = new MySqlConnection(connect.Connect());
+            
+            List<object> list = new List<object>();
+            list = connect.Query("articles", id);
 
-            MySqlCommand query = connection.CreateCommand();
-            query.CommandText = $"SELECT * FROM articles WHERE id = {id}";
-            connection.Open();
-
-            MySqlDataReader result = query.ExecuteReader();
-            if (result.Read())
+            if (list.Count != 0)
             {
-                Article = new ArticleEntity(result.GetInt32(0), result.GetString(1), result.GetString(2), result.GetString(3), result.GetString(4), result.GetString(5), result.GetString(6));
-                connection.Close();
+                Article = new ArticleEntity((int)list[0], (string)list[1], (string)list[2], (string)list[3], (string)list[4], (string)list[5], (string)list[6]);
                 return Article;
             }
             else
             {
-                connection.Close();
                 return null;
             }
         }

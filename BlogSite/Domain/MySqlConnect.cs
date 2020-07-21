@@ -10,7 +10,7 @@ namespace BlogSite.Domain
         private const string User = "root";
         private const string Password = "root";
 
-        public string Connect()
+        private string Connect()
         {
             return $"Database= {Database};Datasource={Host};User={User};Password={Password}";
         }
