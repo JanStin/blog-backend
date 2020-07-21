@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MySql.Data;
+using MySql.Data.MySqlClient;
 
 namespace BlogSite.Models
 {
@@ -16,15 +16,25 @@ namespace BlogSite.Models
         
         public ArticleEntity Init(int id)
         {
-            // TODO: Сделать запрос в БД, чтобы получить статью по id.
-            if (id < 0 || id > 100)
+            var connect = new Domain.MySqlConnect();
+            var connection = new MySqlConnection(connect.Connect());
+
+            MySqlCommand query = connection.CreateCommand();
+            query.CommandText = $"SELECT * FROM articles WHERE id = {id}";
+            connection.Open();
+
+            MySqlDataReader result = query.ExecuteReader();
+            if (result.Read())
             {
+                Article = new ArticleEntity(result.GetInt32(0), result.GetString(1), result.GetString(2), result.GetString(3), result.GetString(4), result.GetString(5), result.GetString(6));
+                connection.Close();
+                return Article;
+            }
+            else
+            {
+                connection.Close();
                 return null;
             }
-
-            Article = new ArticleEntity(id, "Название " + id.ToString(), "Большое описание на несколько строк", @"C:\Users\Rico\Desktop\Уч. материалы\RedFoxDev\img\_TwB97Q_OSo.jpg", "Tag", "Lorem.Paragraphs(120, 2, 2).ToString()", "Key, Word, То что надо");
-
-            return Article;
         }
 
     }
